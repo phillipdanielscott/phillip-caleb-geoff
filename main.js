@@ -28,9 +28,9 @@ var chatPage = {
           console.log("WE CREATED SOMETHING", data);
 
     // will need something similar to add chat messages
-          // var htmlStr = blogPage.htmlGenerator(blogTemplates.blogTmpl,data)
-          // blogPage.blogs.push(data);
-          // $('.blogs ul').append(htmlStr);
+          var htmlStr = chatPage.htmlGenerator(chatTemplates.myMsgs,data)
+          chatPage.chat.push(data);
+          $('.main-container').append(htmlStr);
 
         },
         error: function(err) {
@@ -63,11 +63,12 @@ var chatPage = {
         method: "GET",
         success: function(data) {
           console.log("WE GOT SOMETHING", data);
-          // $('.blogs ul').html("");
-          // data.forEach(function(element,idx) {
-          //   var blogHtmlStr = blogPage.htmlGenerator(blogTemplates.blogTmpl,element);
-          //   $('.blogs ul').append(blogHtmlStr)
-          //   blogPage.blogs.push(element);
+          $('.main-container').html("");
+        data.forEach(function(element,idx) {
+          var chathtmlStr = chatPage.htmlGenerator(chatTemplates.myMsgs,element)
+          $('.main-container').append(htmlStr);
+          chatPage.chat.push(data);
+
           });
         },
         error: function(err) {
