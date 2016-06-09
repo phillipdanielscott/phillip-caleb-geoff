@@ -11,7 +11,7 @@ var chatPage = {
     chatPage.events();
   },
   styling: function() {
-
+    chatPage.getChat();
   },
   events: function() {
     //events go in here
@@ -28,10 +28,11 @@ var chatPage = {
             }
     })
 
-  } /* --------------------------------------- end of events */
+  }, /* --------------------------------------- end of events */
 
 
 // create chat windows
+
     createChat: function(chat) {
       $.ajax({
         url: chatPage.url,
@@ -57,7 +58,7 @@ var chatPage = {
 
       $.ajax({
         method: 'PUT',
-        url: chatPage.url     //+ "/" + blog.id, need id for individual users?
+        url: chatPage.url,    //+ "/" + blog.id, need id for individual users?
         data: chat,
         success: function(data) {
           console.log("UPDATED SUCCESSFULLY!!!", data);
@@ -78,7 +79,7 @@ var chatPage = {
           console.log("WE GOT SOMETHING", data);
           $('.main-container').html("");
         data.forEach(function(element,idx) {
-          var chathtmlStr = chatPage.htmlGenerator(chatTemplates.myMsgs,element)
+          var chatHtmlStr = chatPage.htmlGenerator(chatTemplates.myMsgs,element)
           $('.main-container').append(htmlStr);
           chatPage.chat.push(data);
 
