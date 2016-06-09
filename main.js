@@ -15,7 +15,20 @@ var chatPage = {
   },
   events: function() {
     //events go in here
-  }
+
+    // CREATE NEW MESSAGE BY HITTING ENTER.
+    $('.messageArea').keypress(function(){
+      //enter pressed ?
+      if(e.which == 10 || e.which == 13) {
+          console.log("the enter button works on...", $('.messageArea'));
+          var newMsg = $(this).val();
+          console.log(newMsg);
+            chatPage.createChat(newMsg);
+            $(this).val("");
+            }
+    })
+
+  } /* --------------------------------------- end of events */
 
 
 // create chat windows
