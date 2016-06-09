@@ -84,7 +84,7 @@ var chatPage = {
           // $('.main-container').html("");
         data.forEach(function(element,idx) {
           var chatHtmlStr = chatPage.htmlGenerator(chatTemplates.myMsgs,element)
-          $('.main-container').append(htmlStr);
+          $('.main-container').append(chatHtmlStr);
           chatPage.chat.push(data);
 
           });
