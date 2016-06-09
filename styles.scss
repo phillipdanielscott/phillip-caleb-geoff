@@ -1,8 +1,14 @@
+$primary-color: rgb(140, 93, 0);
+$secondary-color: lightslategray;
+
+
+
 body {
-  background-color: lightslategray; }
+  background-color: $secondary-color;
+}
 
 .main-container {
-  border: 5px solid rgb(140, 93, 0);
+  border: 5px solid $primary-color;
   width: 80%;
   height: 500px;
   margin: 0 auto;
@@ -24,6 +30,6 @@ body {
   }
 
 .messageArea {
-  border: 3px solid rgb(140, 93, 0);
+  border: 3px solid $primary-color;
     width: 99%;
 }
